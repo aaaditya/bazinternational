@@ -6,6 +6,8 @@
 export const site = {
   name: "Baz International",
   domain: "baz-international.com",
+  logo: "/brand/logo.png",
+  logoWhite: "/brand/logo-white.png",
   tagline: "Freight that moves with clarity",
   description:
     "Baz International is a Jaipur-based freight forwarding partner for sea, air, and land shipments — with customs clearance and door-to-door inland connections.",

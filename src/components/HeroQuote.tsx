@@ -24,7 +24,7 @@ export function HeroQuote() {
   return (
     <form
       onSubmit={onSubmit}
-      className="grid gap-px overflow-hidden rounded-sm border border-line bg-[rgba(16,38,47,0.1)] shadow-[0_30px_70px_-35px_rgba(13,61,72,0.45)] md:grid-cols-[1fr_1fr_1fr_auto]"
+      className="grid gap-px overflow-hidden rounded-sm border border-line bg-[rgba(16,38,47,0.1)] shadow-[0_30px_70px_-35px_rgba(8,32,71,0.45)] md:grid-cols-[1fr_1fr_1fr_auto]"
     >
       <label className="block bg-white/95 px-4 py-3">
         <span className="block text-[10px] font-semibold tracking-[0.18em] text-amber-700 uppercase">From</span>
