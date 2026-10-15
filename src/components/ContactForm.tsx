@@ -1,10 +1,14 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { site } from "@/content/site";
+import { useSearchParams } from "next/navigation";
+import { shipmentModes, site } from "@/content/site";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const params = useSearchParams();
+  const presetMode = params.get("mode");
+  const defaultMode = shipmentModes.find((m) => m === presetMode) ?? shipmentModes[0];
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -13,6 +17,8 @@ export function ContactForm() {
     const email = String(data.get("email") || "").trim();
     const phone = String(data.get("phone") || "").trim();
     const mode = String(data.get("mode") || "").trim();
+    const from = String(data.get("from") || "").trim();
+    const to = String(data.get("to") || "").trim();
     const message = String(data.get("message") || "").trim();
 
     const subject = encodeURIComponent(`Freight enquiry from ${name || "website"}`);
@@ -22,12 +28,13 @@ export function ContactForm() {
         `Email: ${email}`,
         `Phone: ${phone}`,
         `Mode: ${mode}`,
+        `From: ${from}`,
+        `To: ${to}`,
         "",
         message,
       ].join("\n"),
     );
 
-    // Opens the visitor's mail client with a prefilled enquiry (not an in-app route).
     window.location.assign(`mailto:${site.email}?subject=${subject}&body=${body}`);
     setSubmitted(true);
   }
@@ -72,14 +79,35 @@ export function ContactForm() {
           <select
             name="mode"
             className="w-full border border-line bg-paper px-3 py-2.5 outline-none transition focus:border-sea"
-            defaultValue="Ocean freight"
+            defaultValue={defaultMode}
           >
-            <option>Ocean freight</option>
-            <option>Air freight</option>
-            <option>Road & inland</option>
-            <option>Customs clearance</option>
-            <option>Multimodal / door-to-door</option>
+            {shipmentModes.map((mode) => (
+              <option key={mode}>{mode}</option>
+            ))}
           </select>
+        </label>
+      </div>
+
+      <div className="grid gap-5 sm:grid-cols-2">
+        <label className="block text-sm">
+          <span className="mb-2 block font-medium text-ink">From</span>
+          <input
+            name="from"
+            type="text"
+            defaultValue={params.get("from") ?? ""}
+            placeholder="City or port of origin"
+            className="w-full border border-line bg-paper px-3 py-2.5 outline-none transition focus:border-sea"
+          />
+        </label>
+        <label className="block text-sm">
+          <span className="mb-2 block font-medium text-ink">To</span>
+          <input
+            name="to"
+            type="text"
+            defaultValue={params.get("to") ?? ""}
+            placeholder="Destination"
+            className="w-full border border-line bg-paper px-3 py-2.5 outline-none transition focus:border-sea"
+          />
         </label>
       </div>
 
