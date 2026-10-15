@@ -30,12 +30,12 @@ export function Footer() {
               <li key={line}>{line}</li>
             ))}
             <li className="pt-2">
-              <a href={site.phoneHref} className="hover:text-white">
+              <a href={site.phoneHref} className="font-semibold text-white underline decoration-amber-400 decoration-2 underline-offset-4 hover:text-amber-200">
                 {site.phone}
               </a>
             </li>
             <li>
-              <a href={site.emailHref} className="break-all hover:text-white">
+              <a href={site.emailHref} className="font-semibold break-all text-white underline decoration-amber-400 decoration-2 underline-offset-4 hover:text-amber-200">
                 {site.email}
               </a>
             </li>

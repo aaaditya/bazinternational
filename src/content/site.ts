@@ -25,6 +25,25 @@ export const site = {
   },
 } as const;
 
+export const shipmentModes = [
+  "Ocean freight",
+  "Air freight",
+  "Road & inland",
+  "Customs clearance",
+  "Multimodal / door-to-door",
+] as const;
+
+/** Home hero route map. lat/lon are real coordinates; edit to change the lanes drawn. */
+export const heroOrigin = { name: "Jaipur", lat: 26.91, lon: 75.79 } as const;
+export const heroLanes = [
+  { name: "Dubai", lat: 25.2, lon: 55.27 },
+  { name: "Rotterdam", lat: 51.92, lon: 4.48 },
+  { name: "New York", lat: 40.71, lon: -74.0 },
+  { name: "Singapore", lat: 1.35, lon: 103.82 },
+  { name: "Durban", lat: -29.86, lon: 31.02 },
+  { name: "Sydney", lat: -33.87, lon: 151.21 },
+] as const;
+
 export const nav = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
@@ -33,8 +52,6 @@ export const nav = [
 ] as const;
 
 export const images = {
-  hero:
-    "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=2400&q=80",
   ocean:
     "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=1600&q=80",
   air: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80",
@@ -104,7 +121,10 @@ export const pillars = [
 ] as const;
 
 export const homeCopy = {
-  heroHeadline: "Global freight, grounded in Jaipur",
+  heroEyebrow: "Jaipur to the world",
+  heroHeadlineLead: "Borders are just",
+  heroHeadlineAccent: "paperwork.",
+  heroHeadlineTail: "We handle it.",
   heroSupport:
     "Sea, air, and land forwarding with customs clearance and door-to-door inland solutions — built for exporters and importers who need reliable movement.",
   heroCtaPrimary: "Request a quote",

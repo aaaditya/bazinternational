@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HeroMap } from "@/components/HeroMap";
+import { HeroQuote } from "@/components/HeroQuote";
 import {
   cargoTypes,
   homeCopy,
@@ -9,45 +11,75 @@ import {
   site,
 } from "@/content/site";
 
+const marqueeItems = ["FCL", "LCL", "Air cargo", "Customs clearance", "Door-to-door", ...cargoTypes];
+
 export default function HomePage() {
   return (
     <>
-      <section className="relative min-h-[100svh] overflow-hidden text-white">
-        <Image
-          src={images.hero}
-          alt="Container ship and port cranes at a busy freight terminal"
-          fill
-          priority
-          className="animate-hero-media object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(105deg,rgba(8,28,34,0.88)_0%,rgba(8,28,34,0.62)_48%,rgba(8,28,34,0.28)_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(217,119,6,0.18),transparent_40%)]" />
+      <section className="relative isolate overflow-hidden bg-[#05141a] text-white">
+        <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+          <div className="absolute -top-40 -left-32 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(26,107,122,0.55),transparent_65%)] blur-2xl" />
+          <div className="absolute top-1/3 -right-40 h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,rgba(217,119,6,0.28),transparent_65%)] blur-2xl" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_at_50%_30%,#000_20%,transparent_75%)]" />
+        </div>
 
-        <div className="site-shell relative flex min-h-[100svh] flex-col justify-end pb-16 pt-28 md:pb-24">
-          <p className="animate-rise font-display text-4xl tracking-[0.08em] text-white uppercase sm:text-5xl md:text-6xl lg:text-7xl">
-            {site.name}
+        <div className="site-shell pt-14 md:pt-20">
+          <p className="animate-rise inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-semibold tracking-[0.16em] text-white/85 uppercase backdrop-blur">
+            <span className="relative flex h-2 w-2">
+              <span className="pulse-ring absolute inline-flex h-full w-full rounded-full bg-amber-400" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-400" />
+            </span>
+            {homeCopy.heroEyebrow}
           </p>
-          <span className="animate-accent-line mt-4 block h-1 w-24 bg-signal" />
-          <h1 className="animate-rise-delay-1 mt-6 max-w-2xl font-display text-3xl leading-tight tracking-wide text-white uppercase sm:text-4xl md:text-5xl">
-            {homeCopy.heroHeadline}
+
+          <h1 className="animate-rise-delay-1 mt-6 max-w-4xl font-display text-[2.6rem] leading-[1.02] font-semibold tracking-tight uppercase sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+            <span className="block text-white/95">{homeCopy.heroHeadlineLead}</span>
+            <span className="text-shimmer block">{homeCopy.heroHeadlineAccent}</span>
+            <span className="block text-white/55">{homeCopy.heroHeadlineTail}</span>
           </h1>
-          <p className="animate-rise-delay-2 mt-5 max-w-xl text-base leading-relaxed text-white/85 sm:text-lg">
-            {homeCopy.heroSupport}
+
+          <div className="animate-rise-delay-2 mt-7 grid gap-6 md:grid-cols-[minmax(0,34rem)_1fr] md:items-end">
+            <p className="text-base leading-relaxed text-white/75 sm:text-lg">{homeCopy.heroSupport}</p>
+            <div className="flex flex-wrap gap-3 md:justify-end">
+              <Link
+                href="/services"
+                className="rounded-sm border border-white/30 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:border-white/60 hover:bg-white/10"
+              >
+                {homeCopy.heroCtaSecondary}
+              </Link>
+              <a
+                href={site.phoneHref}
+                className="rounded-sm bg-white px-5 py-3 text-sm font-semibold text-sea-deep transition hover:bg-amber-100"
+              >
+                Call {site.phone}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative mx-auto mt-6 max-w-[1400px] px-2 sm:px-6 md:mt-0">
+          <div className="float-slow">
+            <HeroMap />
+          </div>
+        </div>
+
+        <div className="site-shell relative z-10 -mt-4 pb-10 md:-mt-14 md:pb-14">
+          <HeroQuote />
+          <p className="mt-3 text-center text-xs text-white/45">
+            Tell us the lane — we reply with a practical plan, not a template.
           </p>
-          <div className="animate-rise-delay-2 mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="bg-signal px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-signal-hover"
-            >
-              {homeCopy.heroCtaPrimary}
-            </Link>
-            <Link
-              href="/services"
-              className="border border-white/45 bg-white/5 px-5 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/15"
-            >
-              {homeCopy.heroCtaSecondary}
-            </Link>
+        </div>
+
+        <div className="border-y border-white/10 bg-black/25 py-3.5 backdrop-blur">
+          <div className="overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
+            <ul className="marquee-track gap-10 pr-10 text-sm font-semibold tracking-[0.14em] text-white/70 uppercase">
+              {[...marqueeItems, ...marqueeItems].map((item, index) => (
+                <li key={`${item}-${index}`} className="flex items-center gap-10 whitespace-nowrap">
+                  {item}
+                  <span aria-hidden className="h-1.5 w-1.5 rotate-45 bg-signal" />
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -152,7 +184,15 @@ export default function HomePage() {
               Ready to move your next shipment?
             </h2>
             <p className="mt-3 text-ink-soft">
-              Call {site.phone} or write to {site.email} — we will help you plan the route.
+              Call{" "}
+              <a href={site.phoneHref} className="font-semibold text-sea-deep underline decoration-signal decoration-2 underline-offset-4 hover:text-sea">
+                {site.phone}
+              </a>{" "}
+              or write to{" "}
+              <a href={site.emailHref} className="font-semibold break-all text-sea-deep underline decoration-signal decoration-2 underline-offset-4 hover:text-sea">
+                {site.email}
+              </a>{" "}
+              — we will help you plan the route.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
