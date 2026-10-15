@@ -49,7 +49,7 @@ export default function HomePage() {
               </Link>
               <a
                 href={site.phoneHref}
-                className="rounded-sm bg-sea-deep px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-10px_rgba(13,61,72,0.7)] transition hover:bg-sea"
+                className="rounded-sm bg-sea-deep px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-10px_rgba(8,32,71,0.7)] transition hover:bg-sea"
               >
                 Call us now
               </a>

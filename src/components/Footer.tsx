@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { nav, site } from "@/content/site";
 
@@ -6,7 +7,7 @@ export function Footer() {
     <footer className="mt-24 border-t border-line bg-sea-deep text-white">
       <div className="site-shell grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
-          <p className="font-display text-2xl tracking-[0.04em] uppercase">{site.name}</p>
+          <Image src={site.logoWhite} alt={site.name} width={837} height={160} className="h-11 w-auto" />
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/75">{site.tagline}</p>
         </div>
 

@@ -70,7 +70,7 @@ export function HeroMap() {
             className="arc-draw"
             style={{ animationDelay: `${lane.delay}s` }}
           />
-          <circle r="2.8" fill="#0d3d48">
+          <circle r="2.8" fill="#082047">
             <animateMotion
               dur={`${lane.dur}s`}
               begin={`${lane.delay + 1.2}s`}
