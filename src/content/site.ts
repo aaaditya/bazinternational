@@ -127,7 +127,7 @@ export const homeCopy = {
   heroHeadlineAccent: "paperwork.",
   heroHeadlineTail: "We handle it.",
   heroSupport:
-    "Sea, air, and land forwarding with customs clearance and door-to-door inland solutions — built for exporters and importers who need reliable movement.",
+    "Sea, air, and land forwarding with customs clearance and door-to-door inland solutions — built for reliable solutions.",
   heroCtaPrimary: "Request a quote",
   heroCtaSecondary: "Explore services",
   servicesIntro:
