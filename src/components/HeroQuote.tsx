@@ -28,11 +28,11 @@ export function HeroQuote() {
     >
       <label className="block bg-white/95 px-4 py-3">
         <span className="block text-[10px] font-semibold tracking-[0.18em] text-amber-700 uppercase">From</span>
-        <input name="from" defaultValue="Jaipur" placeholder="City or port" className={field} />
+        <input name="from" placeholder="Any city or port" className={field} />
       </label>
       <label className="block bg-white/95 px-4 py-3">
         <span className="block text-[10px] font-semibold tracking-[0.18em] text-amber-700 uppercase">To</span>
-        <input name="to" placeholder="Destination" className={field} />
+        <input name="to" placeholder="Any destination" className={field} />
       </label>
       <label className="block bg-white/95 px-4 py-3">
         <span className="block text-[10px] font-semibold tracking-[0.18em] text-amber-700 uppercase">Mode</span>

@@ -30,7 +30,7 @@ export function HeroMap() {
       viewBox={`0 0 ${MAP.width} ${MAP.height}`}
       className="h-auto w-full"
       role="img"
-      aria-label={`Freight routes from ${heroOrigin.name} to ${lanes.map((l) => l.name).join(", ")}`}
+      aria-label="Global freight routes connecting major trade hubs"
     >
       <defs>
         <linearGradient id="arc-grad" x1="0" y1="0" x2="1" y2="0">
@@ -98,14 +98,6 @@ export function HeroMap() {
         <circle cx={origin.x} cy={origin.y} r="6" fill="#f59e0b" className="pulse-ring" />
         <circle cx={origin.x} cy={origin.y} r="6" fill="#f59e0b" className="pulse-ring" style={{ animationDelay: "1.3s" }} />
         <circle cx={origin.x} cy={origin.y} r="5" fill="#fff" stroke="#d97706" strokeWidth="2.5" />
-        <text
-          x={origin.x}
-          y={origin.y + 20}
-          textAnchor="middle"
-          className="fill-sea-deep text-[12px] font-bold tracking-[0.12em] uppercase"
-        >
-          {heroOrigin.name}
-        </text>
       </g>
     </svg>
   );

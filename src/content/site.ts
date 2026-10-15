@@ -123,7 +123,6 @@ export const pillars = [
 ] as const;
 
 export const homeCopy = {
-  heroEyebrow: "Jaipur to the world",
   heroHeadlineLead: "Borders are just",
   heroHeadlineAccent: "paperwork.",
   heroHeadlineTail: "We handle it.",
