@@ -24,15 +24,7 @@ export default function HomePage() {
         </div>
 
         <div className="site-shell pt-14 md:pt-20">
-          <p className="animate-rise inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-xs font-semibold tracking-[0.16em] text-sea-deep uppercase shadow-sm backdrop-blur">
-            <span className="relative flex h-2 w-2">
-              <span className="pulse-ring absolute inline-flex h-full w-full rounded-full bg-amber-500" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
-            </span>
-            {homeCopy.heroEyebrow}
-          </p>
-
-          <h1 className="animate-rise-delay-1 mt-6 max-w-4xl font-display text-[2.6rem] leading-[1.02] font-semibold tracking-tight uppercase sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+          <h1 className="animate-rise-delay-1 max-w-4xl font-display text-[2.6rem] leading-[1.02] font-semibold tracking-tight uppercase sm:text-6xl md:text-7xl lg:text-[5.5rem]">
             <span className="block text-sea-deep">{homeCopy.heroHeadlineLead}</span>
             <span className="text-shimmer block">{homeCopy.heroHeadlineAccent}</span>
             <span className="block text-sea/55">{homeCopy.heroHeadlineTail}</span>
