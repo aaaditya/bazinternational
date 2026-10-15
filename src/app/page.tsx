@@ -16,42 +16,42 @@ const marqueeItems = ["FCL", "LCL", "Air cargo", "Customs clearance", "Door-to-d
 export default function HomePage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden bg-[#05141a] text-white">
+      <section className="relative isolate overflow-hidden bg-[linear-gradient(180deg,#e6f1f3_0%,#f1f7f8_55%,#f7fafb_100%)] text-ink">
         <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-40 -left-32 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(26,107,122,0.55),transparent_65%)] blur-2xl" />
-          <div className="absolute top-1/3 -right-40 h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,rgba(217,119,6,0.28),transparent_65%)] blur-2xl" />
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_at_50%_30%,#000_20%,transparent_75%)]" />
+          <div className="absolute -top-40 -left-32 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(26,107,122,0.22),transparent_65%)] blur-2xl" />
+          <div className="absolute top-1/3 -right-40 h-[32rem] w-[32rem] rounded-full bg-[radial-gradient(circle,rgba(245,158,11,0.22),transparent_65%)] blur-2xl" />
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(16,38,47,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(16,38,47,0.05)_1px,transparent_1px)] [background-size:56px_56px] [mask-image:radial-gradient(ellipse_at_50%_30%,#000_20%,transparent_75%)]" />
         </div>
 
         <div className="site-shell pt-14 md:pt-20">
-          <p className="animate-rise inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-semibold tracking-[0.16em] text-white/85 uppercase backdrop-blur">
+          <p className="animate-rise inline-flex items-center gap-2 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-xs font-semibold tracking-[0.16em] text-sea-deep uppercase shadow-sm backdrop-blur">
             <span className="relative flex h-2 w-2">
-              <span className="pulse-ring absolute inline-flex h-full w-full rounded-full bg-amber-400" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-400" />
+              <span className="pulse-ring absolute inline-flex h-full w-full rounded-full bg-amber-500" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
             </span>
             {homeCopy.heroEyebrow}
           </p>
 
           <h1 className="animate-rise-delay-1 mt-6 max-w-4xl font-display text-[2.6rem] leading-[1.02] font-semibold tracking-tight uppercase sm:text-6xl md:text-7xl lg:text-[5.5rem]">
-            <span className="block text-white/95">{homeCopy.heroHeadlineLead}</span>
+            <span className="block text-sea-deep">{homeCopy.heroHeadlineLead}</span>
             <span className="text-shimmer block">{homeCopy.heroHeadlineAccent}</span>
-            <span className="block text-white/55">{homeCopy.heroHeadlineTail}</span>
+            <span className="block text-sea/55">{homeCopy.heroHeadlineTail}</span>
           </h1>
 
           <div className="animate-rise-delay-2 mt-7 grid gap-6 md:grid-cols-[minmax(0,34rem)_1fr] md:items-end">
-            <p className="text-base leading-relaxed text-white/75 sm:text-lg">{homeCopy.heroSupport}</p>
+            <p className="text-base leading-relaxed text-ink-soft sm:text-lg">{homeCopy.heroSupport}</p>
             <div className="flex flex-wrap gap-3 md:justify-end">
               <Link
                 href="/services"
-                className="rounded-sm border border-white/30 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:border-white/60 hover:bg-white/10"
+                className="rounded-sm border border-sea-deep/35 bg-white/60 px-5 py-3 text-sm font-semibold text-sea-deep backdrop-blur transition hover:border-sea-deep hover:bg-white"
               >
                 {homeCopy.heroCtaSecondary}
               </Link>
               <a
                 href={site.phoneHref}
-                className="rounded-sm bg-white px-5 py-3 text-sm font-semibold text-sea-deep transition hover:bg-amber-100"
+                className="rounded-sm bg-sea-deep px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_-10px_rgba(13,61,72,0.7)] transition hover:bg-sea"
               >
-                Call {site.phone}
+                Call us now
               </a>
             </div>
           </div>
@@ -65,14 +65,14 @@ export default function HomePage() {
 
         <div className="site-shell relative z-10 -mt-4 pb-10 md:-mt-14 md:pb-14">
           <HeroQuote />
-          <p className="mt-3 text-center text-xs text-white/45">
+          <p className="mt-3 text-center text-xs text-ink-soft/80">
             Tell us the lane — we reply with a practical plan, not a template.
           </p>
         </div>
 
-        <div className="border-y border-white/10 bg-black/25 py-3.5 backdrop-blur">
+        <div className="border-y border-line bg-white/60 py-3.5 backdrop-blur">
           <div className="overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_8%,#000_92%,transparent)]">
-            <ul className="marquee-track gap-10 pr-10 text-sm font-semibold tracking-[0.14em] text-white/70 uppercase">
+            <ul className="marquee-track gap-10 pr-10 text-sm font-semibold tracking-[0.14em] text-sea-deep/75 uppercase">
               {[...marqueeItems, ...marqueeItems].map((item, index) => (
                 <li key={`${item}-${index}`} className="flex items-center gap-10 whitespace-nowrap">
                   {item}
